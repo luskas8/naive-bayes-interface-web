@@ -1,49 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles/base.css">
-	<link rel="stylesheet" href="styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naive Bayes - Gênero por nome</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Naive Bayes - Gênero por nome</h1>
+      </header>
+      <main>
+        <form>
+          <div class="input-block">
+            <label for="names">
+              <span>Nomes</span>
+              <i aria-valuetext="Informações">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="info-circle"
+                  class="svg-inline--fa fa-info-circle fa-w-16"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                  ></path>
+                </svg>
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip">
+                  Entre com uma lista de nomes separados por aspas. Em seguida
+                  pressione o botão "Descobrir" para que o modelo responda o
+                  gênero de cada nome.
+                </div>
+              </i>
+            </label>
+            <textarea
+              name="names"
+              id="names"
+              cols="50"
+              rows="4"
+              placeholder="Luan, Renata..."
+            ></textarea>
+          </div>
 
-	<title>Interface TI</title>
-</head>
-<body>
-	<div class="container">
-		<header>
-			<h1>Interface IA</h1>
-		</header>
-		<main>
-			<form>
-				<div class="input-block">
-					<label for="names">
-						<span>Nomes</span>
-						<i aria-valuetext="Informações">
-							<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" class="svg-inline--fa fa-info-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg>
-							<div class="tooltip-arrow"></div>
-							<div class="tooltip">
-								Escreva um nome ou varios nomes separados por ','. Em sequida aperte "Descobrir" para saber o gênero desses nomes atráves da predição da nossa IA (Inteligência Artificial)
-							</div>
-						</i>
-					</label>
-					<textarea name="names" id="names" cols="50" rows="4" placeholder="Luan, Renata..."></textarea>
-				</div>
+          <div class="buttom-block">
+            <button type="submit">Descobrir</button>
+          </div>
 
-				<div class="buttom-block">
-					<button type="submit">
-						Descobrir
-					</button>
-				</div>
-
-				<div class="input-block">
-					<label for="respostas">
-						<span>Respostas</span>
-					</label>
-					<textarea name="respostas" id="respostas" cols="50" rows="4" placeholder="Luan: Masculino, Renata: Feminino..."></textarea>
-				</div>
-			</form>
-		</main>
-	</div>
-</body>
-<script src="scripts/main.js"></script>
+          <div class="input-block">
+            <label for="respostas">
+              <span>Respostas</span>
+            </label>
+            <textarea
+              name="respostas"
+              id="respostas"
+              cols="50"
+              rows="4"
+              placeholder="Luan: Masculino, Renata: Feminino..."
+            ></textarea>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
