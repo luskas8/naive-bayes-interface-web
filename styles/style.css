@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+
+  align-items: center;
+}
+
+.container main {
+  display: flex;
+  flex-flow: column wrap;
+
+  margin-top: 20px;
+}
+
+.input-block {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.input-block label {
+  margin-bottom: 8px;
+  cursor: pointer;
+
+  display: flex;
+  gap: 12px;
+}
+
+.input-block label span {
+  font: 400 1.2rem 'Roboto', 'sans-serif';
+}
+
+.input-block label i {
+  display: flex;
+  align-items: center;
+  width: 15px;
+
+  cursor: help;
+
+  position: relative;
+}
+
+.input-block label .tooltip {
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  transform: translate(50%, 0%);
+
+  width: 220px;
+  padding: 8px 20px;
+  margin: 8px;
+  border-radius: 8px;
+
+  background: #ccc;
+
+  font: 400 0.9rem 'Roboto', 'sans-serif';
+
+  visibility: hidden;
+}
+
+.input-block label .tooltip-arrow {
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  transform: translate(50%, 0%) rotate(45deg);
+
+  width: 26px;
+  height: 26px;
+  background: #CCC;
+
+  visibility: hidden;
+}
+
+.input-block label i:hover > .tooltip,
+.input-block label i:hover > .tooltip-arrow {
+  transition: .2s all;
+  visibility: visible;
+  top: 22px;
+}
+
+.buttom-block {
+  width: 100%;
+
+  margin-top: 8px;
+
+  cursor: pointer;
+}
+
+.buttom-block button {
+  width: 100%;
+  padding: 15px 0;
+
+  cursor: inherit;
+
+  font: 400 0.9rem 'Roboto', 'sans-serif';
+}
+
+.buttom-block + .input-block {
+  margin-top: 20px;
+}

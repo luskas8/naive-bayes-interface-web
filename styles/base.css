@@ -1,0 +1,43 @@
+html {
+	box-sizing: border-box;
+	font: 300 1rem 'Roboto', 'sans-serif'
+}
+
+*,
+*::before,
+*::after {
+	margin: 0px;
+	padding: 0px;
+	outline: 0px;
+	box-sizing: border-box;
+}
+
+html, body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+
+textarea {
+	resize: none;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
