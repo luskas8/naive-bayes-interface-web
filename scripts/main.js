@@ -2,12 +2,10 @@ const form = document.querySelector("form");
 const names = document.querySelector("#names");
 const resposta = document.querySelector("#respostas");
 
-const _URL = "";
-
-let namesData = "";
+const BASE_URL = "https://interdisciplinar-prob-poo.herokuapp.com/naive_bayes";
 
 const handleResponse = (response) => {
-
+  console.log(response);
 }
 
 /**
@@ -25,6 +23,8 @@ const handleChange = (e) => {
 const submit = (e) => {
   e.preventDefault();
 
+  let namesData = names.value;
+
   resposta.value = "Descobrindo...";
   resposta.disabled = true;
 
@@ -32,20 +32,25 @@ const submit = (e) => {
     namesData = namesData.split(",").map(name => { return name.replace(" ", "").replace("\n", "") });
   }
 
-  fetch(_URL, {
+  const data = { "nomes": namesData };
+  console.log(data);
+
+  fetch(BASE_URL, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Headers': "*",
+    },
     method: 'POST',
-    data: namesData,
+    body: JSON.parse({"nomes": namesData}),
     mode: 'cors',
   })
-    .then(rawData => { return rawData.json })
+    .then(rawData => { return rawData.json() })
     .then(handleResponse)
     .catch(error => console.log(`Error: ${error}`))
 };
 
 const load = () => {
   form.addEventListener('submit', submit);
-
-  names.addEventListener('keypress', handleChange)
 }
 
 window.addEventListener('load', load)
